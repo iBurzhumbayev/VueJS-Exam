@@ -40,22 +40,24 @@
 </script>
 
 <template>
-    <header class="header">
-        <div class="header__logo">ВШАГЕ</div>
-        <div class="header__time"></div>
-    </header>
-    <section class="content__AuthReg">
-        <div class="registration">
-            <div class="title">Форма регистрации</div>
-            <form @submit.prevent="registrationUser">
-                <input required v-model='fullName' id="fullName" type="text" placeholder="Имя">
-                <input required v-model='fullSurname' id="fullSurname" class="registration__input" type="text" placeholder="Фамилия">
-                <input required v-model='login' id="login" class="registration__input" type="text" placeholder="Логин">
-                <input required v-model='password' id="password" class="registration__input" type="text" placeholder="Пароль">
-                <button class="registration__button">Зарегистрироваться</button>
-            </form>
-        </div>
-    </section>
+    <div>
+        <header class="header">
+            <div class="header__logo">ВШАГЕ</div>
+            <div class="header__time"></div>
+        </header>
+        <section class="content__AuthReg">
+            <div class="registration">
+                <div class="title">Форма регистрации</div>
+                <form @submit.prevent="registrationUser">
+                    <input required v-model='fullName' id="fullName" type="text" placeholder="Имя">
+                    <input required v-model='fullSurname' id="fullSurname" class="registration__input" type="text" placeholder="Фамилия">
+                    <input required v-model='login' id="login" class="registration__input" type="text" placeholder="Логин">
+                    <input required v-model='password' id="password" class="registration__input" type="text" placeholder="Пароль">
+                    <button class="registration__button">Зарегистрироваться</button>
+                </form>
+            </div>
+        </section>
+    </div>
 </template>
 
 <style scoped>

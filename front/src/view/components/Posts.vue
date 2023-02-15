@@ -38,10 +38,16 @@ import { loadPost, deletePost } from '../../service/posts'
                 body: JSON.stringify(payload)
                 })
                 .then(response => response.json())
-                .then(() => loadPost().then(posts => {
-                    this.posts = posts
-                    this.$emit('updatePostsDelete', posts)
-                }))
+                .then((data) => {
+                    if (data.message == 'поставлен' || 'Лайк удален') {
+                        loadPost().then(posts => {
+                            this.posts = posts
+                            this.$emit('updatePostsDelete', posts)
+                        } 
+                    )} else {
+                        console.log('Error')
+                    }
+                })
                 .catch(() => console.log('Ошибка'))
             },
             checkTimePost(i) {

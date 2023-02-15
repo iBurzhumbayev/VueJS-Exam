@@ -32,9 +32,12 @@
                     body: JSON.stringify(payload)
                 })
                 .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                    this.loadData()
+                .then((data) => {
+                    if (data.message == 'Подписался' || 'Отписался') {
+                        this.loadData()
+                    } else {
+                        console.log('Error')
+                    }
                 })
                 .catch(() => console.log('Ошибка'))
             }

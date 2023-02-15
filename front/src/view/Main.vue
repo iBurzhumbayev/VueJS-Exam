@@ -72,24 +72,26 @@ import { loadPost } from '../service/posts';
 </script>
 
 <template>
-    <header class="header">
-        <div class="header__logo">ВШаге</div>
-        <div class="header__time">{{time}}</div>
-    </header>
-    <section class="content">
-        <div class="content__main">
-            <div>
-                <Profile @updatePostsProfile="updatePostsProfile"/>
-                <Followed/>
-            </div>
+    <div>
+        <header class="header">
+            <div class="header__logo">ВШаге</div>
+            <div class="header__time">{{time}}</div>
+        </header>
+        <section class="content">
+            <div class="content__main">
+                <div>
+                    <Profile @updatePostsProfile="updatePostsProfile"/>
+                    <Followed/>
+                </div>
 
-            <div class="content__main-wrapper">
-                <CreatePost @updatePosts="updatePosts"/>
-                <Posts @updatePostsDelete="updatePostsDelete" :posts="posts"/>
+                <div class="content__main-wrapper">
+                    <CreatePost @updatePosts="updatePosts"/>
+                    <Posts @updatePostsDelete="updatePostsDelete" :posts="posts"/>
+                </div>
+                <Users/>
             </div>
-            <Users/>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <style scoped>
